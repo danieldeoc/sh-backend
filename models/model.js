@@ -3,6 +3,8 @@ import db from "../database/db.js";
 // importa o datatypes do sequelize
 import { DataTypes } from "sequelize";
 
+///////////////////////////////
+// USer database Mode
 const userModel = db.define('users', {
     id: {type: DataTypes.INTEGER, primaryKey: true},
     username: {type: DataTypes.STRING},
@@ -13,5 +15,4 @@ const userModel = db.define('users', {
     userhash: {type: DataTypes.STRING}}, {
         timestamps: false
     });
-
 export default userModel;
