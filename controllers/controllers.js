@@ -26,6 +26,20 @@ export const getUser = async (req, res) => {
     }
 }
 
+// Get a  User by Mail
+export const getUserByMail = async (req, res) => {
+    try {
+        const userByMail = await userModel.findAll({
+            where: {
+                usermail:req.params.usermail
+            } 
+        }); 
+        res.json(userByMail[0]);
+    } catch (error) {
+        res.json( {message: error.message} )
+    }
+}
+
 // insert All User
 export const insUser = async (req, res) => {
     try {
